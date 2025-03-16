@@ -1,7 +1,3 @@
-# Ledger Signer
-
-A professional TypeScript SDK to connect to a Ledger device and sign messages in a gasless environment (GalaChain/Hyperledger Fabric).
-
 ## Overview
 
 Ledger Signer provides a simple yet robust interface to interact with Ledger devices using TypeScript. It supports signing messages, error handling, and includes utilities for logging and CLI prompting. This project is built with SOLID principles and best practices in mind.
