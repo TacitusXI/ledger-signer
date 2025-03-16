@@ -16,7 +16,7 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v14 or higher is recom
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/ledger-signer.git
+   git clone https://github.com/TacitusXI/ledger-signer.git
    cd ledger-signer
    ```
 
