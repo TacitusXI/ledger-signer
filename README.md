@@ -1,6 +1,6 @@
 ## Overview
 
-Ledger Signer provides a simple yet robust interface to interact with Ledger devices using TypeScript. It supports signing messages, error handling, and includes utilities for logging and CLI prompting. This project is built with SOLID principles and best practices in mind.
+Ledger Signer provides a simple yet robust interface to interact with Ledger devices using TypeScript. It supports secure message signing, dynamic user input, comprehensive error handling, and includes utilities for logging and CLI prompting.
 
 ## Features
 
