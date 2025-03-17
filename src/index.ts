@@ -1,12 +1,15 @@
 import { signMessage } from "./ledgerSignMessage";
 import logger from "./utils/logger";
 import { promptUser, promptForInput } from "./utils/prompt";
+import { displayBanner } from "./utils/banner";
 
 /**
  * Main entry point of the application.
  */
 async function main(): Promise<void> {
-  // Prompt the user to enter a message dynamically
+  displayBanner();
+
+  // Dynamically prompt the user for a message to sign
   const message = await promptForInput("Enter the message to sign: ");
   logger.info(`Signing message: "${message}"`);
 
