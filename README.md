@@ -1,3 +1,8 @@
+▗▖ ▗▖ ▗▄▄▖▗▖  ▗▖    ▗▖   ▗▄▄▄▖▗▄▄▄   ▗▄▄▖▗▄▄▄▖▗▄▄▖ 
+▐▌ ▐▌▐▌   ▐▛▚▞▜▌    ▐▌   ▐▌   ▐▌  █ ▐▌   ▐▌   ▐▌ ▐▌
+▐▛▀▜▌ ▝▀▚▖▐▌  ▐▌    ▐▌   ▐▛▀▀▘▐▌  █ ▐▌▝▜▌▐▛▀▀▘▐▛▀▚▖
+▐▌ ▐▌▗▄▄▞▘▐▌  ▐▌    ▐▙▄▄▖▐▙▄▄▖▐▙▄▄▀ ▝▚▄▞▘▐▙▄▄▖▐▌ ▐▌
+
 ## Overview
 
 Ledger Signer provides a simple yet robust interface to interact with Ledger devices using TypeScript. It supports secure message signing, dynamic user input, comprehensive error handling, and includes utilities for logging and CLI prompting.
