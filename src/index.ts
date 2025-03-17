@@ -1,12 +1,13 @@
 import { signMessage } from "./ledgerSignMessage";
 import logger from "./utils/logger";
-import { promptUser } from "./utils/prompt";
+import { promptUser, promptForInput } from "./utils/prompt";
 
 /**
  * Main entry point of the application.
  */
 async function main(): Promise<void> {
-  const message = "Hello, my friend!";
+  // Prompt the user to enter a message dynamically
+  const message = await promptForInput("Enter the message to sign: ");
   logger.info(`Signing message: "${message}"`);
 
   // Define a maximum number of retries to avoid infinite loops
@@ -22,7 +23,6 @@ async function main(): Promise<void> {
       break; // Exit loop if successful
     } catch (error: unknown) {
       if (error instanceof Error) {
-        // Check for known Ledger error messages
         if (error.message.includes("UNKNOWN_APDU")) {
           logger.error(
             "Ledger error: Your Ledger might be locked or the Ethereum app not open."
@@ -38,17 +38,15 @@ async function main(): Promise<void> {
             "Connect your Ledger device, open the Ethereum app, and press Enter to retry..."
           );
         } else {
-          // Handle any other or unknown errors
           logger.error("Error during execution:", error.message);
           await promptUser("Press Enter to retry or Ctrl+C to abort...");
         }
       } else {
-        // Non-Error throwables
         logger.error("An unknown error occurred:", error);
         await promptUser("Press Enter to retry or Ctrl+C to abort...");
       }
 
-      // Check if we've hit the retry limit
+      // If maximum retries reached, exit
       if (attempts >= MAX_RETRIES) {
         logger.error("Maximum retry limit reached. Exiting now.");
         process.exit(1);
@@ -57,7 +55,6 @@ async function main(): Promise<void> {
   }
 }
 
-// Run main() and catch any unhandled errors
 main().catch((err) => {
   logger.error("Unhandled error in main():", err);
   process.exit(1);
